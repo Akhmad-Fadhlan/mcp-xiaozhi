@@ -1,0 +1,29 @@
+{
+  "name": "jarvis-iot-mcp",
+  "version": "1.0.0",
+  "description": "MCP server JARVIS IoT: tool get_sensor_data untuk Xiaozhi AI (bridge WebSocket) dan endpoint HTTP MCP untuk Vercel.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.9"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "start": "node --env-file-if-exists=.env dist/bridge-cli.js",
+    "dev:bridge": "node --env-file-if-exists=.env --import tsx src/bridge-cli.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "ws": "^8.22.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/ws": "^8.18.2",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  }
+}
